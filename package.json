@@ -1,0 +1,39 @@
+{
+  "name": "home-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev -p 80",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "lint": "eslint components/ lib/ pages/ --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "autoprefixer": "^10.0.2",
+    "fontsource-montserrat": "^3.0.9",
+    "leaflet": "^1.7.1",
+    "next": "^10.0.2",
+    "postcss": "^8.1.8",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-leaflet": "^3.1.0",
+    "react-minimal-pie-chart": "^8.1.0",
+    "tailwindcss": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  }
+}
