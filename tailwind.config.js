@@ -21,6 +21,9 @@ module.exports = {
       '6xl': '4rem',
       '7xl': '5rem',
     },
+    zIndex: {
+      1000: 1000,
+    },
   },
   variants: {
     extend: {},
