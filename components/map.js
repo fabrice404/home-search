@@ -49,7 +49,7 @@ const Map = ({ daft, setMap }) => {
 
   return (
     <MapContainer
-      center={[53.29, -6.45]}
+      center={[53.35, -6.45]}
       zoom={10}
       className="h-screen"
       whenCreated={mapLoaded}

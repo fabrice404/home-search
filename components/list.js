@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBath, faBed, faTrain, faEuroSign, faHome, faPlug,
-  faCity, faLayerGroup, faCaretDown, faShoppingCart,
+  faCar, faLayerGroup, faCaretDown, faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import { getBerColor, getScoringColor } from '../lib/color';
@@ -53,9 +53,8 @@ const List = ({ daft, getMap }) => {
             <FontAwesomeIcon icon={faPlug} />
           </th>
           <th className="sticky top-0 bg-gray-800 p-2 text-white">
-            <FontAwesomeIcon icon={faCity} />
-          </th>
-          <th className="sticky top-0 bg-gray-800 p-2 text-white">
+            <FontAwesomeIcon icon={faCar} />
+            {' / '}
             <FontAwesomeIcon icon={faTrain} />
           </th>
           <th className="sticky top-0 bg-gray-800 p-2 text-white">
@@ -69,7 +68,6 @@ const List = ({ daft, getMap }) => {
       </thead>
       {
         daft
-          .filter((property) => property.scoring.total > 0)
           .sort((a, b) => b.scoring.total - a.scoring.total)
           .map((property) => (
             <tbody key={`${property.id}`}>
@@ -95,16 +93,13 @@ const List = ({ daft, getMap }) => {
                     {property.ber}
                   </span>
                 </td>
-                <td className="border-t-2 border-gray-200 bg-gray-50 text-center">
-                  {property.distance}
-                </td>
                 <td className="border-t-2 border-gray-200 text-center">
                   {`${property.transport.distance} km`}
                   <div className="text-xs whitespace-pre">
                     {`${property.transport.duration} min`}
                   </div>
                   <div className="text-xs whitespace-pre">
-                    {property.transport.name.replace(/ /gi, '\n')}
+                    {property.transport.name ? property.transport.name.replace(/ /gi, '\n') : ''}
                   </div>
                 </td>
                 <td className="border-t-2 border-gray-200 bg-gray-50 text-center">
@@ -134,7 +129,6 @@ const List = ({ daft, getMap }) => {
                 <td className="text-center text-xs">{property.scoring.bedrooms}</td>
                 <td className="text-center text-xs bg-gray-50">{property.scoring.bathrooms}</td>
                 <td className="text-center text-xs">{property.scoring.ber}</td>
-                <td className="text-center text-xs bg-gray-50">{property.scoring.distance}</td>
                 <td className="text-center text-xs">{property.scoring.transport}</td>
                 <td className="text-center text-xs bg-gray-50">{property.scoring.store}</td>
                 <td className="text-center text-xs" />
